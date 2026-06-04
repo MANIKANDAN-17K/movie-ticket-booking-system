@@ -1,4 +1,4 @@
-function MovieCard({ title, rating, onBook }) {
+function MovieCard({ movie, onBook }) {
   return (
     <div className="bg-white rounded-lg shadow-lg p-5 w-72">
 
@@ -7,16 +7,16 @@ function MovieCard({ title, rating, onBook }) {
       </div>
 
       <h2 className="text-xl font-semibold">
-        {title}
+        {movie.title}
       </h2>
 
       <p className="text-gray-600">
-        Rating: ⭐ {rating}
+        Rating: ⭐ {movie.rating}
       </p>
 
       <button
-        onClick={onBook}
-        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        onClick={() => onBook(movie)}
+        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded"
       >
         Book Now
       </button>
